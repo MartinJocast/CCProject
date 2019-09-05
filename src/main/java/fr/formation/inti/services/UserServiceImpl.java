@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void deleteById(Integer idUser) {
-		dao.deleteById(idUser);		
+		dao.deleteById(idUser);	 	
 	}
 
 }
