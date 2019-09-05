@@ -52,7 +52,6 @@ public class Users implements java.io.Serializable {
 	}
 
 	@Id
-
 	@Column(name = "id_user", unique = true, nullable = false)
 	public int getIdUser() {
 		return this.idUser;
