@@ -13,6 +13,8 @@ public interface UserService {
 	public Users findByEmail(String email);
 	
 	public Set<Users> findByPseudo(String pseudo);
+	
+	public Set<Users> findByRole(String role);
 
 	public void save(Users user);
 

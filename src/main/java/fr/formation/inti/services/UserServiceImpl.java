@@ -34,6 +34,11 @@ public class UserServiceImpl implements UserService {
 	public Set<Users> findByPseudo(String pseudo) {
 		return dao.findByPseudo(pseudo);
 	}
+	
+	@Override
+	public Set<Users> findByRole(String role) {
+		return dao.findByRole(role);
+	}
 
 	@Override
 	public void save(Users user) {
@@ -47,6 +52,9 @@ public class UserServiceImpl implements UserService {
 		userUpdate.setPassword(user.getPassword());
 		userUpdate.setPseudo(user.getPseudo());
 		userUpdate.setSecurityRequest(user.getSecurityRequest());
+		userUpdate.setRole(user.getRole());
+		userUpdate.setLeaguesHaveUserses(user.getLeaguesHaveUserses());
+		userUpdate.setTeamses(user.getTeamses());
 		dao.save(userUpdate);	
 	}
 

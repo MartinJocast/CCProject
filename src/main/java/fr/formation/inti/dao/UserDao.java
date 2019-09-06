@@ -12,7 +12,8 @@ public interface UserDao extends JpaRepository<Users, Integer> {
 
 	public Set<Users> findByPseudo(String pseudo);
 
-
+	public Set<Users> findByRole(String role);
+	
 	public void deleteById(Integer idUser);
 
 }
