@@ -16,4 +16,5 @@ public interface UserDao extends JpaRepository<Users, Integer> {
 	
 	public void deleteById(Integer idUser);
 
+	
 }
