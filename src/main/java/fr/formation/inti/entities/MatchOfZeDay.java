@@ -18,8 +18,8 @@ import javax.persistence.Table;
 public class MatchOfZeDay implements java.io.Serializable {
 
 	private int idMatchOfTheDay;
-	private Integer match1;
-	private Integer match2;
+	private Integer matchDay;
+	
 	private Set<StatsPlayers> statsPlayerses = new HashSet<StatsPlayers>(0);
 	private Set<ResultsUsers> resultsUserses = new HashSet<ResultsUsers>(0);
 
@@ -30,11 +30,11 @@ public class MatchOfZeDay implements java.io.Serializable {
 		this.idMatchOfTheDay = idMatchOfTheDay;
 	}
 
-	public MatchOfZeDay(int idMatchOfTheDay, Integer match1, Integer match2, Set<StatsPlayers> statsPlayerses,
+	public MatchOfZeDay(int idMatchOfTheDay, Integer matchDay, Integer match2, Set<StatsPlayers> statsPlayerses,
 			Set<ResultsUsers> resultsUserses) {
 		this.idMatchOfTheDay = idMatchOfTheDay;
-		this.match1 = match1;
-		this.match2 = match2;
+		this.matchDay = matchDay;
+	
 		this.statsPlayerses = statsPlayerses;
 		this.resultsUserses = resultsUserses;
 	}
@@ -50,23 +50,16 @@ public class MatchOfZeDay implements java.io.Serializable {
 		this.idMatchOfTheDay = idMatchOfTheDay;
 	}
 
-	@Column(name = "match 1")
-	public Integer getMatch1() {
-		return this.match1;
+	@Column(name = "matchDay")
+	public Integer getMatchDay() {
+		return this.matchDay;
 	}
 
-	public void setMatch1(Integer match1) {
-		this.match1 = match1;
+	public void setMatchDay(Integer matchDay) {
+		this.matchDay = matchDay;
 	}
 
-	@Column(name = "match 2")
-	public Integer getMatch2() {
-		return this.match2;
-	}
 
-	public void setMatch2(Integer match2) {
-		this.match2 = match2;
-	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "matchOfZeDay")
 	public Set<StatsPlayers> getStatsPlayerses() {
