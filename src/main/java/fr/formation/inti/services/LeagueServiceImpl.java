@@ -12,6 +12,7 @@ import fr.formation.inti.entities.ResultsUsers;
 @Service
 public class LeagueServiceImpl implements LeagueService {
 
+	
 	@Autowired
 	LeagueDao dao;
 	

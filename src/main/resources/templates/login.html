@@ -3,37 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Champions Challenges</title>
-	<link href="css/theme.css" rel="stylesheet">
-	<link href="css/menu.css" rel="stylesheet">
-	<link href="css/login.css" rel="stylesheet">
-	<link href="css/loginUtils.css" rel="stylesheet">
+	<link href="/css/theme.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet">
+	<link href="/css/login.css" rel="stylesheet">
+	<link href="/css/loginUtils.css" rel="stylesheet">
 </head>
 <body>
 	<header>
-	<a href="home.html" name="home"><img id="logo" src="img/logoBlanc.png" name="logo"/></a>
+	<a href="/home.html" name="home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
 	<h1> Connexion </h1>
-		<div class="container" onclick="cross(this); toggleDisplay();">
+<nav>
+	<ul id="menu">
+	<li>
+	<div class="container" onclick="cross(this); toggleDisplay();">
 	  	<div class="bar1"></div>
 	 	<div class="bar2"></div>
 		<div class="bar3"></div>
 	</div>  
-	</header>
-
-	<nav class="nav" id="aaa">
-	<ul id="menu">
-			<li><h2>Utilisateur</h2></li>
-	    	<li><input type="search" placeholder="Rechercher..."></li>
+	<ul class="flex">
+			<li><span id="user">${pseudo}</span></li>
+	    	<li><input type="search" placeholder="Rechercher..." id="search"></li>
 	      	<li><img id="user" src="img/user.png" name="user"/><a href="compte.html">Mon Compte</a></li>
 	    	<li><img id="createTeam" src="img/compo.png" name="createTeam"/><a href="createTeam.html">Créer mon Équipe</a></li>
 	    	<li><img id="ligue" src="img/ligueIcon.png" name="ligue"/><a href="ligue.html">Ligue</a></li>
 	   		<li><img id="createTeam" src="img/login.png" name="createTeam"/><a href="login.html">Connexion</a></li>
 	   		<li><img id="myTeam" src="img/ball.png" name="myTeam"/><a href="myTeam.html">Mon Equipe</a></li>
+	 		
 	 </ul>
-	 <div class="lang">
-	 	<a href="#"><img id="fr" src="img/fr.png" name="fr"/></a>
-	 	<a href="#"><img id="en" src="img/en.png" name="en"/></a>
-	 </div>
-	 </nav>
+	 </li>
+	</ul>
+</nav> 
+</header>
 
 
 	<section >
@@ -132,6 +132,19 @@
 	function cross(x) {
 		x.classList.toggle("change");
 	}
+	
+	
+	function toggleDisplay(elmt)
+	{
+	   if(typeof elmt == "string")
+	      elmt = document.getElementById("aaa");
+	   if(elmt.style.display == "block")
+	      elmt.style.display = "";
+	   else
+	      elmt.style.display = "block";
+	}
+	toggleDisplay("aaa");
+
 
 var animateButton = function(e) {
 

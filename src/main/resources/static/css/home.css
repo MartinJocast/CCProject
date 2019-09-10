@@ -47,7 +47,6 @@ article h2{
 	width: 45%;
 	text-align: justify;
 	margin-top: 20px;
-	color: #272727;
 }
 article p{
 	font-size: 20px;
@@ -55,7 +54,7 @@ article p{
 }
 article span{
 	font-weight: bold;
-	color: black;
+	color: #192f96;
 }
 hr{
 	margin-top: 20px;

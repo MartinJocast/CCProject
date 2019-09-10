@@ -3,7 +3,7 @@
 	padding : 0px;
 }
 
-
+/* polices */
 @font-face {
   font-family: "Champions-Bold";
   src: url('Champions-Bold.svg#Champions-Bold') format('svg'),
@@ -21,45 +21,13 @@
   font-weight: normal;
   font-style: normal;
 }
-nav{
-	
-	background: #111f62;
-	width: 500px;
-	height: 600px;
-	
-}
-h2{
-	color: white;
-	text-align: center;
-	font-size: 3em;
-}
-li{
-	list-style-type: none;
-	margin-left: 10px;
-	margin-bottom : 30px;
-	font-family: Champions, Champions-Bold, Calibri, sans-serif;
-		
-}
-ul img{
-	margin-top: 5px;
-}
-ul a{
-	color : white;
-	font-family: Champions, Champions-Bold, Calibri, sans-serif;
-	text-decoration: none;
-	font-size: 2em;
-	margin-left: 30px;
-}
 
-ul a:hover
-{
-  color: #a6a6a6;
-}
+
+/* menu hamburger */
 .container {
   display: inline-block;
   cursor: pointer;
-   margin-right: 0px;
-   margin-bottom: 10px;
+  float : right;
 }
 
 .bar1, .bar2, .bar3 {
@@ -81,7 +49,6 @@ ul a:hover
   border-radius : 0px 0px;
   
 }
-
 .change .bar2 {opacity: 0;}
 
 .change .bar3 {
@@ -94,20 +61,60 @@ ul a:hover
 }
 
 
-#aaa{
-	position: relative;
-	float: right;
-    display: none;
+
+/* partie positionnement et déco */
+#menu a,img,#user,#search { 
+	display:block; 
+	color: #fff; 
+	text-decoration:none;
+	background: transparent;
+	font-size: 30px;
+	font-family: Champions,"Champions-Bold", Calibri, sans-serif;
+}
+nav #user{
+	text-align: center;
+	font-size: 2em;
 }
 
-nav .lang{
-	margin-top: 10%;
-	align-content: flex-end;
-}
-.lang{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+#menu > li,
+#menu > li li {
+	float: right;
+	position: relative;
+	display:inline-block;
+	width: 300px;
+	padding: 6px 15px;
+	background-color: transparent;/*color hover bar*/
+	background-image: none;
 	
+}
+#menu > li li { background: transparent none; }
+#menu > li li:hover, #user:hover { background:#4a65e1; } /*color hover list*/
+#menu > li:first-child {
+	border-radius: 8px 0 0 8px;
+}
+#menu > li:hover {
+	background-color: transparent;
+	background-image: none;
+	
+}
+/* (presque) fin de la partie positionnement/déco */
+/* dans cette déclaration, on fixe le max-height */
+#menu ul {
+	position: absolute;
+	top: 4em; right: 0;
+	max-height:0em;	
+	margin-right: 1%;
+	padding: 0;
+	background-color: #192f96;
+	background-image: none;
+	overflow: hidden;
+	transition: 1s max-height 0.3s;
+	border-radius: 0 0 8px 8px;
+}
+/* ici on change la valeur de max-height au :hover */
+#menu > li:hover ul {
+	/* à adapter, le minimum est le meilleur mais voyez large 😉 */
+	max-height: 800px;
+	max-width: 500px;
 }
 
