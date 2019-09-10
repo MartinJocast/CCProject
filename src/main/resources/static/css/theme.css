@@ -1,0 +1,66 @@
+*{
+	margin : 0px;
+	padding : 0px;
+}
+body{
+	background: #ebebeb;
+}
+
+@font-face {
+  font-family: "Champions-Bold";
+  src: url('Champions-Bold.svg#Champions-Bold') format('svg'),
+       url('Champions-Bold.ttf') format('truetype'),
+       url('Champions-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Champions";
+  src: url('Champions.eot');
+  src: url('Champions.eot?#iefix') format('embedded-opentype'),
+       url('Champions.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+header{
+	background: linear-gradient(#192f96,#192f96,#192f96,#192f96,#192f96,#192f96,#192f96,#ebebeb);
+	height: 130px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header h1{
+	color: white;
+	font-size: 3em;
+	margin-right: 6%;
+	margin-bottom: 1%;
+	font-family: Champions,"Champions-Bold", Calibri, sans-serif;
+}
+#logo{
+	margin-bottom: 1%;
+}
+
+
+
+
+footer {
+    background: url("img/backFooter.png") no-repeat scroll;
+    background-size: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+footer a{
+	text-decoration: none;
+	color: white;
+	font-size : 40px;
+	font-family: "Champions", "Champions-Bold", Calibri, sans-serif;
+}
+footer a:hover{
+	color: #e2e2e2;
+}

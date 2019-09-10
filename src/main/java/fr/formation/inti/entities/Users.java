@@ -18,6 +18,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "users", catalog = "championschallengeproject", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Users implements java.io.Serializable {
 
+	
 	private int idUser;
 	private String email;
 	private String password;

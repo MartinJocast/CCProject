@@ -33,6 +33,7 @@ public class Players implements java.io.Serializable {
 	private Set<StatsPlayers> statsPlayerses = new HashSet<StatsPlayers>(0);
 	private Set<TeamsHavePlayers> teamsHavePlayerses = new HashSet<TeamsHavePlayers>(0);
 
+	
 	public Players() {
 	}
 
