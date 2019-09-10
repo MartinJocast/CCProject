@@ -1,0 +1,155 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Champions Challenges</title>
+	<link href="css/theme.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">
+	<link href="css/loginUtils.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+	<a href="home.html" name="home"><img id="logo" src="img/logoBlanc.png" name="logo"/></a>
+	<h1> Connexion </h1>
+		<div class="container" onclick="cross(this); toggleDisplay();">
+	  	<div class="bar1"></div>
+	 	<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>  
+	</header>
+
+	<nav class="nav" id="aaa">
+	<ul id="menu">
+			<li><h2>Utilisateur</h2></li>
+	    	<li><input type="search" placeholder="Rechercher..."></li>
+	      	<li><img id="user" src="img/user.png" name="user"/><a href="compte.html">Mon Compte</a></li>
+	    	<li><img id="createTeam" src="img/compo.png" name="createTeam"/><a href="createTeam.html">Créer mon Équipe</a></li>
+	    	<li><img id="ligue" src="img/ligueIcon.png" name="ligue"/><a href="ligue.html">Ligue</a></li>
+	   		<li><img id="createTeam" src="img/login.png" name="createTeam"/><a href="login.html">Connexion</a></li>
+	   		<li><img id="myTeam" src="img/ball.png" name="myTeam"/><a href="myTeam.html">Mon Equipe</a></li>
+	 </ul>
+	 <div class="lang">
+	 	<a href="#"><img id="fr" src="img/fr.png" name="fr"/></a>
+	 	<a href="#"><img id="en" src="img/en.png" name="en"/></a>
+	 </div>
+	 </nav>
+
+
+	<section >
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<form class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-53">
+						Se connecter
+					</span>
+					
+					<div class="flex">
+					<a href="#" class="btn-face m-b-20">
+						<i class="fa fa-facebook-official"></i>
+						Facebook
+					</a>
+
+					<a href="#" class="btn-google m-b-20">
+						<img src="img/icons/icon-google.png" alt="GOOGLE">
+						Google
+					</a>
+					</div>
+					
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">
+							Adresse mail
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" >
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="p-t-13 p-b-9">
+						<span class="txt1">
+							Mot de Passe
+						</span>
+
+						<a href="#" class="txt2 bo1 m-l-5">
+							oublié ?
+						</a>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" >
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn">
+							Se connecter
+						</button>
+					</div>
+
+					<div class="w-full text-center p-t-55">
+						<span class="txt2">
+							Pas encore inscrit ?
+						</span>
+
+						<a href="inscription.html" class="txt2 bo1">
+							Inscrivez-vous ici
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	</section>
+	
+	<footer >
+	<a href="rules.html"> Réglements  </a>
+	</footer>
+	
+	
+<script type="text/javascript">
+
+	function cross(x) {
+		x.classList.toggle("change");
+	}
+
+var animateButton = function(e) {
+
+	e.preventDefault;
+	//reset animation
+	e.target.classList.remove('animate');
+		  
+	e.target.classList.add('animate');
+	setTimeout(function(){
+	e.target.classList.remove('animate');
+	 },700);
+	};
+
+	var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+	for (var i = 0; i < bubblyButtons.length; i++) {
+	 bubblyButtons[i].addEventListener('click', animateButton, false);
+	}
+</script>
+</body>
+</html>

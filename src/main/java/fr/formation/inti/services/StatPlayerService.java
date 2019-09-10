@@ -10,9 +10,9 @@ public interface StatPlayerService {
 
 	public StatsPlayers findById(Integer idStatsPlayers);
 
-	public Set<StatsPlayers> findByGoal(Integer goal);
+	public Set<StatsPlayers> findByGoals(Integer goal);
 
-	public Set<StatsPlayers> findByRate(Integer rate);
+	public Set<StatsPlayers> findByRates(Integer rate);
 	
 	public void save(StatsPlayers statplayer);
 

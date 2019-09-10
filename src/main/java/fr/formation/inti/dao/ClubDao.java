@@ -11,5 +11,5 @@ public interface ClubDao extends JpaRepository <Clubs, Integer>{
 	public Clubs findByClubCode (String clubcode);
 
 	
-	public void deletebyId(Integer idClub);
+	public void deleteById(Integer idClub);
 }

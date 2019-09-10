@@ -11,7 +11,7 @@ public interface LeagueDao extends JpaRepository<Leagues, Integer> {
 
 	public Set<Leagues> findByName(String name);
 
-	public Set<Leagues> findByResultsUsers(Set<ResultsUsers> resultsUserses);
+	public Set<Leagues> findByResultsUserses(Set<ResultsUsers> resultsUserses);
 	
 	public void deleteById(Integer idLeague);
 

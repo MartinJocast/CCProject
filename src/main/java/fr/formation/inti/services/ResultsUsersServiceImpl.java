@@ -40,7 +40,7 @@ public class ResultsUsersServiceImpl implements ResultsUsersService {
 
 	@Override
 	public Set<ResultsUsers> findByLeague(Leagues leagues) {
-		return dao.findByLeague(leagues);
+		return dao.findByLeagues(leagues);
 	}
 
 	@Override

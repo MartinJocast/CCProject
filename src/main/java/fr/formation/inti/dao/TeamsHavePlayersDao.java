@@ -12,7 +12,7 @@ import fr.formation.inti.entities.Users;
 
 public interface TeamsHavePlayersDao extends JpaRepository<TeamsHavePlayers, Integer> {
 
-	public Set<TeamsHavePlayers> findByTeam(Teams teams);
+	public Set<TeamsHavePlayers> findByTeams(Teams teams);
 	
 	public void deleteById(Integer idTeamsHavePlayers);
 

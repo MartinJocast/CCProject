@@ -10,11 +10,11 @@ import fr.formation.inti.entities.StatsPlayers;
 
 public interface MatchOfZeDayDao extends JpaRepository<MatchOfZeDay, Integer> {
 
-	public Set<MatchOfZeDay> findByMatch1(Integer matchDay);
+	public Set<MatchOfZeDay> findByMatchDay(Integer matchDay);
 
-	public Set<MatchOfZeDay> findByStatsPlayers(Set<StatsPlayers> statsPlayerses);
+	public Set<MatchOfZeDay> findByStatsPlayerses(Set<StatsPlayers> statsPlayerses);
 	
-	public Set<MatchOfZeDay> findByResultsUsers(Set<ResultsUsers> resultsUserses);
+	public Set<MatchOfZeDay> findByResultsUserses(Set<ResultsUsers> resultsUserses);
 	
 	public void deleteById(Integer idMatchOfTheDay);
 

@@ -21,7 +21,7 @@ public Set<Teams> findAll();
 
 	public void delete(Teams team);
 	
-	public void deleteById(Integer idUser);
+	public void deleteByUsersIdUser(Integer usersIdUser);
 	
 
 }

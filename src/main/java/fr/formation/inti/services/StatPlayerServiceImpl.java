@@ -8,16 +8,12 @@ import org.springframework.stereotype.Service;
 import fr.formation.inti.dao.StatsPlayersDao;
 import fr.formation.inti.entities.StatsPlayers;
 
-
 @Service
 public class StatPlayerServiceImpl implements StatPlayerService{
 
-	
 	@Autowired
 	StatsPlayersDao dao;
-	
-	
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public Set<StatsPlayers> findAll() {
@@ -30,13 +26,13 @@ public class StatPlayerServiceImpl implements StatPlayerService{
 	}
 
 	@Override
-	public Set<StatsPlayers> findByGoal(Integer goal) {
-		return dao.findByGoal(goal);
+	public Set<StatsPlayers> findByGoals(Integer goal) {
+		return dao.findByGoals(goal);
 	}
 
 	@Override
-	public Set<StatsPlayers> findByRate(Integer rate) {
-		return dao.findByRate(rate);
+	public Set<StatsPlayers> findByRates(Integer rate) {
+		return dao.findByRates(rate);
 	}
 
 	@Override

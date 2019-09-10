@@ -10,7 +10,7 @@ import fr.formation.inti.entities.Users;
 
 public interface LeaguesHaveUsersDao extends JpaRepository<LeaguesHaveUsers, Integer> {
 
-	public Set<LeaguesHaveUsers> findByLeague(Leagues leagues);
+	public Set<LeaguesHaveUsers> findByLeagues(Leagues leagues);
 
 	public Set<LeaguesHaveUsers> findByUsers(Users users);
 	

@@ -29,8 +29,8 @@ public class LeaguesHaveUsersServiceImpl implements LeaguesHaveUsersService {
 	}
 
 	@Override
-	public Set<LeaguesHaveUsers> findByLeague(Leagues leagues) {
-		return dao.findByLeague(leagues);
+	public Set<LeaguesHaveUsers> findByLeagues(Leagues leagues) {
+		return dao.findByLeagues(leagues);
 	}
 
 	@Override

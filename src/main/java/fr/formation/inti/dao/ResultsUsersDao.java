@@ -15,7 +15,7 @@ public interface ResultsUsersDao extends JpaRepository<ResultsUsers, Integer> {
 	
 	public Set<ResultsUsers> findByMatch2(Integer match2);
 
-	public Set<ResultsUsers> findByLeague(Leagues leagues);
+	public Set<ResultsUsers> findByLeagues(Leagues leagues);
 	
 	public Set<ResultsUsers> findByMatchOfZeDay(MatchOfZeDay matchOfZeDay);
 	

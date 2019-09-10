@@ -13,7 +13,7 @@ public interface LeagueService {
 	
 	public Set<Leagues> findByName(String name);
 
-	public Set<Leagues> findByUsers(Set<ResultsUsers> resultsUserses);
+	public Set<Leagues> findByResultsUserses(Set<ResultsUsers> resultsUserses);
 
 	public void save(Leagues league);
 

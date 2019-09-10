@@ -31,7 +31,7 @@ public class TeamsHavePlayersServiceImpl implements TeamsHavePlayersService {
 
 	@Override
 	public Set<TeamsHavePlayers> findByTeam(Teams teams) {
-		return dao.findByTeam(teams);
+		return dao.findByTeams(teams);
 	}
 
 	@Override

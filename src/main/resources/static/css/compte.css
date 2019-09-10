@@ -1,0 +1,64 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+  font-family: "Champions-Bold";
+  src: url('Champions-Bold.svg#Champions-Bold') format('svg'),
+       url('Champions-Bold.ttf') format('truetype'),
+       url('Champions-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Champions";
+  src: url('Champions.eot');
+  src: url('Champions.eot?#iefix') format('embedded-opentype'),
+       url('Champions.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+hr{
+	width: 500px;
+}
+
+section{
+	font-family: Champions, Champions-Bold, Calibri, sans-serif;
+	height : 600px;
+	width : 45%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background: white;
+	margin : 5%;
+	margin-left : 30%;
+	padding : 2%;
+	border-radius: 2%/50%;
+	
+}
+
+.info, .resumeInfo{
+	font-family: Champions, Champions-Bold, Calibri, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+input{
+	width: 200px;
+	height: 40px;
+	margin-left : 10px;
+}
+.updateUser{
+	flex-direction: row;
+	font-family: Champions, Champions-Bold, Calibri, sans-serif;
+	margin-top: 10%;
+}
+.submit{
+	margin-top: 20%;
+	margin-left : 50%;
+}

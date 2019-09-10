@@ -1,0 +1,249 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Champions Challenges</title>
+	<link href="css/theme.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
+	<link href="css/compte.css" rel="stylesheet">
+	<link href="css/button2.css" rel="stylesheet">
+	<script type="text/javascript" src="js/anim.js"></script>
+</head>
+<body>
+	<header>
+	<img id="logo" src="img/logoBlanc.png" name="logo"/>
+	<h1> Mon Compte</h1>
+	<div class="container" onclick="cross(this); toggleDisplay();">
+	  	<div class="bar1"></div>
+	 	<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>  
+	</header>
+	
+	<nav class="nav" id="aaa">
+	<ul id="menu">
+			<li><h2>${pseudo}</h2></li>
+	    	<li><input type="search" placeholder="Rechercher..."></li>
+	      	<li><img id="user" src="img/user.png" name="user"/><a href="compte.html">Mon Compte</a></li>
+	    	<li><img id="createTeam" src="img/compo.png" name="createTeam"/><a href="createTeam.html">Créer mon Équipe</a></li>
+	    	<li><img id="ligue" src="img/ligueIcon.png" name="ligue"/><a href="ligue.html">Ligue</a></li>
+	   		<li><img id="createTeam" src="img/login.png" name="createTeam"/><a href="login.html">Connexion</a></li>
+	   		<li><img id="myTeam" src="img/ball.png" name="myTeam"/><a href="myTeam.html">Mon Equipe</a></li>
+	   		
+	 </ul>
+	 <div class="lang">
+	 	<a href="#"><img id="fr" src="img/fr.png" name="fr"/></a>
+	 	<a href="#"><img id="en" src="img/en.png" name="en"/></a>
+	 </div>
+	 </nav>
+	 
+	<section>
+		<article>
+			<div class="btn-cont" >
+			  <a class="btn" href="#">
+			    Déconnexion
+			    <span class="line-1"></span>
+			    <span class="line-2"></span>
+			    <span class="line-3"></span>
+			    <span class="line-4"></span>
+			  </a>
+			</div>
+		</article>
+		
+		<article class="info">
+
+			<h3> Mes informations </h3>
+			
+			<hr>
+
+			<form class="resumeInfo">
+			
+				<div class="updateUser" data-validate="Pseudo est obligatoire">
+					<label class="">Pseudo:</span>
+					<input class="" type="text" name="name" value="${pseudo}" required="required">
+				</div>
+
+				<div class="updateUser" data-validate = "Email est obligatoire : aaa@xyz.com">
+					<label class="">Email:</span>
+					<input class="" type="email" name="email" value="${email}" required="required">
+				</div>
+
+				<div class="updateUser" data-validate="Mot de passe est obligatoire">
+					<label class="">Mot de Passe:</span>
+					<input class="" type="password" name="password" placeholder="Entrer un mot de passe" required="required">
+				</div>
+				
+				<div class="updateUser" data-validate="Confirmation est obligatoire">
+					<label class="">Confirmation:</span>
+					<input class="" type="password" name="confirm" placeholder="Confirmer la saisie">
+				</div>
+				
+				<div class="submit">
+    				<input type="submit" class="submit-btn" value="Modifier"/>
+    			</div>
+			</form>
+			
+		</article>
+	
+	</section>
+	
+	
+	<footer >
+	<a href="rules.html"> Réglements  </a>
+	</footer>
+</body>
+
+<script type="text/javascript">
+
+	function cross(x) {
+		x.classList.toggle("change");
+	}
+
+var animateButton = function(e) {
+
+	e.preventDefault;
+	//reset animation
+	e.target.classList.remove('animate');
+		  
+	e.target.classList.add('animate');
+	setTimeout(function(){
+	e.target.classList.remove('animate');
+	 },700);
+	};
+
+	var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+	for (var i = 0; i < bubblyButtons.length; i++) {
+	 bubblyButtons[i].addEventListener('click', animateButton, false);
+	}
+</script>
+<script type="text/javascript">
+
+
+
+//If you like this and wish to use it please give credit where it is due! -Kaigth :)
+
+//variables
+var document = window.document,
+	
+	  $_window = $( window ),
+
+timeout,
+
+isAnimating = false,
+slideNum = 0,
+
+	$welcomeBarL = $( ".bt-sl-solid-l" ),
+	  $welcomeBarR = $( ".bt-sl-solid-r" ),
+	  $btSlideActive = $( ".welcome-button" ).find( ".bt-slide-l" ),
+
+	  $welcomeBtn = $( ".welcome-button a" );
+
+//------//
+
+//Delegation
+$welcomeBtn.on( 'mouseenter', function () {
+	  var timeout,
+		    $slidebar = $( '.bt-slider-' + slideNum ),
+		    
+animate = function () {
+  
+			      timeout = setTimeout(function () {
+				        clearTimeout( timeout );
+
+				        if ( slideNum === 5 ) {
+					
+					          isAnimating = false;
+      					slideNum = 0;
+
+				        } else {
+
+      					isAnimating = true;
+      					$slidebar = $( '.bt-slider-' + slideNum );
+
+      					$slidebar.removeClass( 'bt-slide-l' );
+
+      					slideNum++;
+
+      					animate();
+
+				        }
+
+  			}, 100 );
+		   };
+
+	  animate();
+
+});
+
+$welcomeBtn.on( 'mouseout', function () {
+	  var timeout,
+		      $slidebar = $( '.bt-slider-' + slideNum ),
+    
+		      animate = function () {
+			
+    timeout = setTimeout(function () {
+      				clearTimeout( timeout );
+
+      				if ( slideNum === 5 ) {
+
+        					isAnimating = false;
+        					slideNum = 0;
+
+      				} else {
+
+        					isAnimating = true;
+        					$slidebar = $( '.bt-slider-' + slideNum );
+
+        					$slidebar.addClass( 'bt-slide-l' );
+
+        					slideNum++;
+
+        					animate();
+
+				          }
+
+    			}, 100 );
+		};
+
+	animate();
+
+});
+
+$_window.on( "load", function () {
+
+timeout = setTimeout(function () {
+					    clearTimeout();
+
+					    $welcomeBarL.removeClass( "down" );
+					$welcomeBarR.removeClass( "down" );
+
+				}, 100 );
+
+				timeout = setTimeout(function () {
+					clearTimeout();
+
+					$welcomeBarL.removeClass( "out" );
+					$welcomeBarR.removeClass( "out" );
+
+				}, 400 );
+
+timeout = setTimeout(function () {
+					clearTimeout();
+
+					$welcomeBtn.removeClass( "out" );
+
+				}, 800 );
+
+timeout = setTimeout(function () {
+					clearTimeout();
+
+					$btSlideActive.removeClass( "out" );
+
+				}, 1000 );
+
+});
+
+
+</script>
+</html>

@@ -12,7 +12,7 @@ public interface MatchOfZeDayService {
 	
 	public MatchOfZeDay findById(Integer idMatchOfTheDay);
 	
-	public Set<MatchOfZeDay> findByMatch1(Integer matchDay);
+	public Set<MatchOfZeDay> findByMatchDay(Integer matchDay);
 
 	public Set<MatchOfZeDay> findByStatsPlayers(Set<StatsPlayers> statsPlayerses);
 	

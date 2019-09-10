@@ -60,8 +60,8 @@ public class TeamServiceImpl implements TeamService {
 	}
 
 	@Override
-	public void deleteById(Integer idTeam) {
-		dao.deleteById(idTeam);	 	
+	public void deleteByUsersIdUser(Integer usersIdUser) {
+		dao.deleteByUsersIdUser(usersIdUser);	 	
 
 	}
 

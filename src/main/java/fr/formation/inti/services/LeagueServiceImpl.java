@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import fr.formation.inti.dao.LeagueDao;
 import fr.formation.inti.entities.Leagues;
-import fr.formation.inti.entities.Players;
 import fr.formation.inti.entities.ResultsUsers;
 
 @Service
@@ -33,8 +32,8 @@ public class LeagueServiceImpl implements LeagueService {
 	}
 
 	@Override
-	public Set<Leagues> findByUsers(Set<ResultsUsers> resultsUserses) {
-		return dao.findByResultsUsers(resultsUserses);
+	public Set<Leagues> findByResultsUserses(Set<ResultsUsers> resultsUserses) {
+		return dao.findByResultsUserses(resultsUserses);
 	}
 
 	@Override
@@ -61,5 +60,5 @@ public class LeagueServiceImpl implements LeagueService {
 	public void deleteById(Integer idLeague) {
 		dao.deleteById(idLeague);
 	}
-	
+
 }

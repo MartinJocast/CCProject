@@ -29,18 +29,18 @@ public class MatchOfZeDayServiceImpl implements MatchOfZeDayService {
 	}
 
 	@Override
-	public Set<MatchOfZeDay> findByMatch1(Integer matchDay) {
-		return dao.findByMatch1(matchDay);
+	public Set<MatchOfZeDay> findByMatchDay(Integer matchDay) {
+		return dao.findByMatchDay(matchDay);
 	}
 
 	@Override
 	public Set<MatchOfZeDay> findByStatsPlayers(Set<StatsPlayers> statsPlayerses) {
-		return dao.findByStatsPlayers(statsPlayerses);
+		return dao.findByStatsPlayerses(statsPlayerses);
 	}
 
 	@Override
 	public Set<MatchOfZeDay> findByResultsUsers(Set<ResultsUsers> resultsUserses) {
-		return dao.findByResultsUsers(resultsUserses);
+		return dao.findByResultsUserses(resultsUserses);
 	}
 
 	@Override

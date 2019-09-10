@@ -13,7 +13,7 @@ public interface LeaguesHaveUsersService {
 	
 	public LeaguesHaveUsers findById(Integer idLeaguesHaveUsers);
 	
-	public Set<LeaguesHaveUsers> findByLeague(Leagues leagues);
+	public Set<LeaguesHaveUsers> findByLeagues(Leagues leagues);
 
 	public Set<LeaguesHaveUsers> findByUsers(Users users);
 

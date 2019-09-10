@@ -1,0 +1,66 @@
+article{
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+  font-family: "Champions-Bold";
+  src: url('Champions-Bold.svg#Champions-Bold') format('svg'),
+       url('Champions-Bold.ttf') format('truetype'),
+       url('Champions-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Champions";
+  src: url('Champions.eot');
+  src: url('Champions.eot?#iefix') format('embedded-opentype'),
+       url('Champions.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.back{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: url("img/terrain.png") scroll no-repeat center;
+}
+article h1{
+	font-style: italic;
+	text-align: center;
+	color : black;
+	margin-top: 10px;
+	font-family: Champions, Champions-Bold, Calibri, sans-serif;
+	font-size: 4em;
+}
+
+article h2{
+	color : black;
+	margin-top: 20px;
+	font-family: Champions, Champions-Bold, Calibri, sans-serif;
+}
+
+
+.textBox{
+	width: 45%;
+	text-align: justify;
+	margin-top: 20px;
+	color: #272727;
+}
+article p{
+	font-size: 20px;
+	font-family: Champions, Champions-Bold, Calibri, sans-serif;
+}
+article span{
+	font-weight: bold;
+	color: black;
+}
+hr{
+	margin-top: 20px;
+}
+
+article, section{
+	position: static;
+}
