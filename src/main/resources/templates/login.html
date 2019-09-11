@@ -40,7 +40,7 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form class="login100-form validate-form flex-sb flex-w">
+				<form th:action="@{/}" th:object="${userLogin}" class="login100-form validate-form flex-sb flex-w" method="post">
 					<span class="login100-form-title p-b-53">
 						Se connecter
 					</span>
@@ -62,8 +62,8 @@
 							Adresse mail
 						</span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" >
+					<div class="wrap-input100 validate-input" data-validate = "Email is required">
+						<input th:field="*{email}" class="input100" type="email" required="required">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -77,22 +77,22 @@
 						</a>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" >
+						<input th:field="*{password}" class="input100" type="password" required="required">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
-							Se connecter
-						</button>
-					</div>
+					
+					<div class="container-contact100-form-btn">
+                    	<input type="submit" class="login100-form-btn" value="Se connecter">
+               		</div>
+					
 
 					<div class="w-full text-center p-t-55">
 						<span class="txt2">
 							Pas encore inscrit ?
 						</span>
 
-						<a href="inscription.html" class="txt2 bo1">
+						<a href="user/inscription" class="txt2 bo1">
 							Inscrivez-vous ici
 						</a>
 					</div>
