@@ -1,99 +1,122 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Champions Challenges</title>
-	<link href="/css/theme.css" rel="stylesheet">
-	<link href="/css/menu.css" rel="stylesheet">
-	<link href="/css/home.css" rel="stylesheet">
-	<link href="/css/button1.css" rel="stylesheet">
-	<script type="text/javascript" src="/js/anim.js"></script>
+<meta charset="UTF-8">
+<title>Champions Challenges</title>
+<link href="/css/theme.css" rel="stylesheet">
+<link href="/css/menu.css" rel="stylesheet">
+<link href="/css/home.css" rel="stylesheet">
+<link href="/css/button1.css" rel="stylesheet">
+<script type="text/javascript" src="/js/anim.js"></script>
 </head>
 <body>
 	<header>
-	<a href="/home.html"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
-	<h1> Accueil</h1>
-<nav>
-	<ul id="menu">
-	<li>
-	<div class="container" onclick="cross(this)">
-	  	<div class="bar1"></div>
-	 	<div class="bar2"></div>
-		<div class="bar3"></div>
-	</div>  
-	<ul class="flex">
-			<li><span id="user">${pseudo}</span></li>
-	    	<li><input type="search" placeholder="Rechercher..."></li>
-	      	<li><img id="user" src="img/user.png" name="user"/><a href="/compte.html">Mon Compte</a></li>
-	    	<li><img id="createTeam" src="img/compo.png" name="createTeam"/><a href="/createTeam.html">Créer mon Équipe</a></li>
-	    	<li><img id="ligue" src="img/ligueIcon.png" name="ligue"/><a href="/ligue.html">Ligue</a></li>
-	   		<li><img id="createTeam" src="img/login.png" name="createTeam"/><a href="/login.html">Connexion</a></li>
-	   		<li><img id="myTeam" src="img/ball.png" name="myTeam"/><a href="/myTeam.html">Mon Equipe</a></li>
-	 		
-	 </ul>
-	 </li>
-	</ul>
-</nav>  
+		<a href="/home.html"><img id="logo" src="/img/logoBlanc.png"
+			name="logo" /></a>
+		<h1>Accueil</h1>
+		<nav>
+			<ul id="menu">
+				<li>
+					<div class="container" onclick="cross(this)">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+					</div>
+					<ul class="flex">
+			
+			<li><span id="user" th:text="${user.pseudo}"></span></li>
+			<li><input type="search" placeholder="Rechercher..."></li>
+			<li><img id="user" src="/img/user.png" name="user" /><a
+			href="/compte.html">Mon Compte</a></li>
+			
+			<li><img id="createTeam" src="/img/compo.png"name="createTeam" /><a href="/createteam/createteam">
+			Créer mon Équipe</a></li>
+								
+								
+			<li><img id="ligue" src="/img/ligueIcon.png" name="ligue" /><a
+			href="/league/ligue">Ligue</a></li>
+							
+							
+			<li><img id="createTeam" src="/img/login.png"
+			name="createTeam" /><a href="/login.html">Connexion</a></li>
+			
+			<li><img id="myTeam" src="/img/ball.png" name="myTeam" /><a
+			href="/team/creationTeam">Mon Equipe</a></li>
+
+					</ul>
+				</li>
+			</ul>
+		</nav>
 	</header>
-		 
+
 	<article>
-   
-    <h1> Relevez le défi des Champions...</h1>
-    
-    <div class="back">
-    <h2> Créer ou Rejoins une Ligue !</h2>
-    <div class="textBox">
-    <p> <span>Rejoignez</span> une ligue ou bien <span>créez-en</span> une en choisissant le nom de la ligue.
-    Vous pourrez <span>nommer</span> votre ligue. Chaque ligue possède son propre code <span>à partager</span>
-     avec vos amis pour vous affrontez jusqu'à <span>4 joueurs.</span> </p>
-	</div>
-			<hr align="center" width="35%" color="blue" size="1px"> 
-	<h2> Construit ton Equipe !</h2>
-	<div class="textBox">
-    <p> 	Une fois que votre ligue démarre, place à la <span> constitution de l'équipe </span> : chaque participant doit constituer son équipe avec un
-    <span>budget strict !</span> Le nombre de joueur est limité au <span>11 titulaires</span>. A vous de trouver la <span>meilleure composition.</span> </p>
-	</div>
-			<hr align="center" width="35%" color="blue" size="1px"> 	
-	<h2> Compare ton équipe !</h2>
-	<div class="textBox">
-    <p> Vous pouvez ensuite <span>comparer</span> votre équipe avec les différents membres de la ligue. </p>
-	</div>
-	</div>
+
+		<h1>Relevez le défi des Champions...</h1>
+
+		<div class="back">
+			<h2>Créer ou Rejoins une Ligue !</h2>
+			<div class="textBox">
+				<p>
+					<span>Rejoignez</span> une ligue ou bien <span>créez-en</span> une
+					en choisissant le nom de la ligue. Vous pourrez <span>nommer</span>
+					votre ligue. Chaque ligue possède son propre code <span>à
+						partager</span> avec vos amis pour vous affrontez jusqu'à <span>4
+						joueurs.</span>
+				</p>
+			</div>
+			<hr align="center" width="35%" color="blue" size="1px">
+			<h2>Construit ton Equipe !</h2>
+			<div class="textBox">
+				<p>
+					Une fois que votre ligue démarre, place à la <span>
+						constitution de l'équipe </span> : chaque participant doit constituer son
+					équipe avec un <span>budget strict !</span> Le nombre de joueur est
+					limité au <span>11 titulaires</span>. A vous de trouver la <span>meilleure
+						composition.</span>
+				</p>
+			</div>
+			<hr align="center" width="35%" color="blue" size="1px">
+			<h2>Compare ton équipe !</h2>
+			<div class="textBox">
+				<p>
+					Vous pouvez ensuite <span>comparer</span> votre équipe avec les
+					différents membres de la ligue.
+				</p>
+			</div>
+		</div>
 	</article>
-	
+
 	<section>
-	<button class="bubbly-button">Commencer l'Aventure !</button>
+		<button class="bubbly-button">Commencer l'Aventure !</button>
 	</section>
-	
-	
-	<footer >
-	<a href="/rules.html"> Réglements  </a>
+
+
+	<footer>
+		<a href="/rules.html"> Réglements </a>
 	</footer>
 </body>
 
 <script type="text/javascript">
-
 	function cross(x) {
 		x.classList.toggle("change");
 	}
 
+	var animateButton = function(e) {
 
-var animateButton = function(e) {
+		e.preventDefault;
+		//reset animation
+		e.target.classList.remove('animate');
 
-	e.preventDefault;
-	//reset animation
-	e.target.classList.remove('animate');
-		  
-	e.target.classList.add('animate');
-	setTimeout(function(){
-	e.target.classList.remove('animate');
-	 },700);
+		e.target.classList.add('animate');
+		setTimeout(function() {
+			e.target.classList.remove('animate');
+		}, 700);
 	};
 
 	var bubblyButtons = document.getElementsByClassName("bubbly-button");
 
 	for (var i = 0; i < bubblyButtons.length; i++) {
-	 bubblyButtons[i].addEventListener('click', animateButton, false);
+		bubblyButtons[i].addEventListener('click', animateButton, false);
 	}
 </script>
 </html>
