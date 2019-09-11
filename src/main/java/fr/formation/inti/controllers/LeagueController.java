@@ -17,8 +17,7 @@ import fr.formation.inti.services.LeagueService;
 @RequestMapping("league")
 
 public class LeagueController {
-	
-	
+
 	@Autowired
 	LeagueService leagueService;
 	

@@ -37,6 +37,7 @@ public class UserController {
         user.setRole("user");
         user.setSecurityRequest("null");
         userService.save(user);
+        model.addAttribute("user", user);
         return "home";
     }
 	
