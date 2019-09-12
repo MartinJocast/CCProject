@@ -23,17 +23,14 @@ public class LeagueController {
 	LeagueService leagueService;
 	
 
-	@RequestMapping(value = "/ligue", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String addLeagueForm(Leagues league, Model model) {
         model.addAttribute("activePage", "league");
         return "ligue";
     }
 	
 	
-	
-	
-	
-	@RequestMapping(value = "/ligue", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
     public String addLeague(@Valid Leagues league, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("activePage", "league");

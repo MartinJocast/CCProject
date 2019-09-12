@@ -20,13 +20,13 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 	
-	@GetMapping(path = "/")
+	@GetMapping(path={"/", "/login"})
     public String loginForm(Model model) {
         model.addAttribute("userLogin", new Users());
         return "login";
     }
 	
-	@PostMapping(path = "/")
+	@PostMapping(path={"/", "/login"})
     public String login(@Valid Users userLogin, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("userLogin", userLogin);
