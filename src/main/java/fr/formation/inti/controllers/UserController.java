@@ -21,13 +21,13 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@GetMapping(value = "/inscription")
+	@GetMapping(value = "/")
     public String addUserForm(Model model) {
         model.addAttribute("user", new Users());
         return "inscription";
     }
 	
-	@PostMapping(value = "/inscription")
+	@PostMapping(value = "/")
     public String addUser(@Valid Users user, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("user", user);

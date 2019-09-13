@@ -11,7 +11,7 @@
 </head>
 <body>
 	<header>
-		<a href="/home.html"><img id="logo" src="/img/logoBlanc.png"
+		<a href="/home"><img id="logo" src="/img/logoBlanc.png"
 			name="logo" /></a>
 		<h1>Accueil</h1>
 		<nav>
@@ -27,16 +27,20 @@
 						<li><span id="user" th:text="${user.pseudo}"></span></li>
 						<li><input type="search" placeholder="Rechercher..."></li>
 						<li><img id="user" src="/img/user.png" name="user" /><a
-							href="/compte.html">Mon Compte</a></li>
+							href="/compte/">Mon Compte</a></li>
+							
 						<li><img id="createTeam" src="/img/compo.png"
-							name="createTeam" /><a href="/createteam/createteam"> Créer
+							name="createTeam" /><a href="/createteam/"> Créer
 								mon Équipe</a></li>
+								
 						<li><img id="ligue" src="/img/ligueIcon.png" name="ligue" /><a
-							href="/league/ligue">Ligue</a></li>
-						<li><img id="createTeam" src="/img/login.png"
-							name="createTeam" /><a href="/login.html">Connexion</a></li>
+							href="/league/">Ligue</a></li>
+							
+						<li><img id="connexion" src="/img/login.png"
+							name="connexion" /><a href="/login">Deconnexion</a></li>
+							
 						<li><img id="myTeam" src="/img/ball.png" name="myTeam" /><a
-							href="/team/creationTeam">Mon Equipe</a></li>
+							href="/team/">Mon Equipe</a></li>
 
 					</ul>
 				</li>
@@ -46,28 +50,25 @@
 
 	<article>
 
-		<h1>Relevez le défi des Champions...</h1>
+		<h1>Relever le défi des Champions...</h1>
 
 		<div class="back">
-			<h2>Créer ou Rejoins une Ligue !</h2>
+			<h2>Créez ou Rejoignez une Ligue !</h2>
 			<div class="textBox">
 				<p>
-					<span>Rejoignez</span> une ligue ou bien <span>créez-en</span> une
-					en choisissant le nom de la ligue. Vous pourrez <span>nommer</span>
-					votre ligue. Chaque ligue possède son propre code <span>à
-						partager</span> avec vos amis pour vous affrontez jusqu'à <span>4
-						joueurs.</span>
+					<span>Créez</span> une ligue de 4 participants avec vos collègues ou vos amis ou bien <span>créez-en une !</span> Le créateur pourra <span>la</span>
+					nommer et lui générer son propre mot de passe afin de rendre <span>votre ligue privée.</span>
 				</p>
 			</div>
 			<hr align="center" width="35%" color="blue" size="1px">
 			<h2>Construit ton Equipe !</h2>
 			<div class="textBox">
 				<p>
-					Une fois que votre ligue démarre, place à la <span>
-						constitution de l'équipe </span> : chaque participant doit constituer son
-					équipe avec un <span>budget strict !</span> Le nombre de joueur est
-					limité au <span>11 titulaires</span>. A vous de trouver la <span>meilleure
-						composition.</span>
+					Une fois votre ligue constituée, place à la <span>
+						composition de votre équipe </span> : pour cela, chaque participant doit acheter<span>11 joueurs</span>, en veillant à equilibrer le nombre de joueurs par poste <span>(1 gardien, 4 défenseurs, 4 milieux et 2 attaquants).</span>
+						 Attention toutefois à rentrer dans votre budget ! 
+						En effet, chaque équipe doit avoir <span>une valeur maximale de 500M d'euros.</span>  
+						 A vous de trouver la <span>meilleure composition possible.</span>
 				</p>
 			</div>
 			<hr align="center" width="35%" color="blue" size="1px">
@@ -87,7 +88,7 @@
 
 
 	<footer>
-		<a href="/rules.html"> Réglements </a>
+		<a href="/rules/"> Réglements </a>
 	</footer>
 </body>
 

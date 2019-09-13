@@ -14,7 +14,7 @@ import fr.formation.inti.entities.Users;
 import fr.formation.inti.services.UserService;
 
 @Controller
-@RequestMapping(path={"", "/"})
+@RequestMapping("login")
 public class LoginController {
 
 	@Autowired
@@ -40,5 +40,7 @@ public class LoginController {
         } else {
         	return "redirect:/";
         }
+        
+        
     }
 }

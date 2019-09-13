@@ -19,17 +19,17 @@ public class TeamController {
 	@Autowired
 	TeamService teamService;
 
-	@RequestMapping(value = "/creationTeam", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String addTeamForm(Teams team, Model model) {
 		model.addAttribute("activePage", "team");
-		return "createTeam";
+		return "myTeam";
 	}
 
-	@RequestMapping(value = "/creationTeam", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String addTeam(@Valid Teams team, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("activePage", "team");
-			return "createTeam";
+			return "myTeam";
 		}
 
 		if (teamService.findByName(team.getName()) != null) {
@@ -37,7 +37,7 @@ public class TeamController {
 		}
 
 		teamService.save(team);
-		return "createTeam";
+		return "myTeam";
 
 	}
 

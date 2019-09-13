@@ -1,0 +1,53 @@
+section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.a
+{
+	margin-right: 7px;
+	margin-bottom: -1px;
+    width: 150px;
+    height: 75px;
+    background-image: url("img/topBall.png");
+    background-repeat: no-repeat;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+.b
+{
+    width: 150px;
+    height: 75px;
+    background-image: url("img/bottomBall.png");
+    background-repeat: no-repeat;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+.c{
+	width: 0px;
+	height: 0px;
+	display: none;
+	background-image: url("img/ticket.png");
+	color: white;
+	text-align: right;
+}
+
+
+section:hover .a{
+	transform: translateY(-30px);
+}
+section:hover .b{
+	transform: translateY(30px);
+}
+section:hover .c{
+	display: block; 
+	width: 150px;
+	height: 75px;
+}
+section:hover p{
+	color: red;  
+}
