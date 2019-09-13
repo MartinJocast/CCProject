@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Champions-Bold";
+  src: url('Champions-Bold.svg#Champions-Bold') format('svg'),
+       url('Champions-Bold.ttf') format('truetype'),
+       url('Champions-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Champions";
+  src: url('Champions.eot');
+  src: url('Champions.eot?#iefix') format('embedded-opentype'),
+       url('Champions.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+.submit{
+	width: 100px;
+	height: 100px;
+	border-radius: 200px/200px;
+	background: #00bd00;
+	color: white;
+	font-family: Champions, Champions-Bold, Calibri, sans-serif;
+ 	font-size: 16px;
+}
+
+.submit:hover{
+	background: #008000;
+}
+
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

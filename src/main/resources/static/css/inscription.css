@@ -1,5 +1,8 @@
 
-
+* {
+	margin: 0px; 
+	padding: 0px; 
+}
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -25,10 +28,6 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
-* {
-	margin: 0px; 
-	padding: 0px; 
-}
 
 body, html {
 	height: 100%;
@@ -143,8 +142,6 @@ iframe {
 [ Contact ]*/
 
 .container-contact100 {
-  width: 100%;  
-  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -157,6 +154,8 @@ iframe {
   background: transparent;
   position: relative;
   z-index: 1;
+  di: hidden;
+  
 }
 
 .wrap-contact100 {

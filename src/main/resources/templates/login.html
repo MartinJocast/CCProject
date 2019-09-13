@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-	<a href="/home.html" name="home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
+	<a href="/home/" name="home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
 	<h1> Connexion </h1>
 <nav>
 	<ul id="menu">
@@ -23,11 +23,11 @@
 	<ul class="flex">
 			<li><span id="user">${pseudo}</span></li>
 	    	<li><input type="search" placeholder="Rechercher..." id="search"></li>
-	      	<li><img id="user" src="img/user.png" name="user"/><a href="compte.html">Mon Compte</a></li>
-	    	<li><img id="createTeam" src="img/compo.png" name="createTeam"/><a href="createTeam.html">Créer mon Équipe</a></li>
-	    	<li><img id="ligue" src="img/ligueIcon.png" name="ligue"/><a href="ligue.html">Ligue</a></li>
-	   		<li><img id="createTeam" src="img/login.png" name="createTeam"/><a href="login.html">Connexion</a></li>
-	   		<li><img id="myTeam" src="img/ball.png" name="myTeam"/><a href="myTeam.html">Mon Equipe</a></li>
+	      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte/">Mon Compte</a></li>
+	    	<li><img id="createTeam" src="/img/compo.png" name="createTeam"/><a href="/createteam/">Créer mon Équipe</a></li>
+	    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league/">Ligue</a></li>
+	   		<li><img id="Deconnexion" src="/img/login.png" name="Deconnexion"/><a href="/login/">Deconnexion</a></li>
+	   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/team/">Mon Equipe</a></li>
 	 		
 	 </ul>
 	 </li>
@@ -40,7 +40,7 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form th:action="@{/}" th:object="${userLogin}" class="login100-form validate-form flex-sb flex-w" method="post">
+				<form th:action="@{/login/}" th:object="${userLogin}" class="login100-form validate-form flex-sb flex-w" method="post">
 					<span class="login100-form-title p-b-53">
 						Se connecter
 					</span>
@@ -123,7 +123,7 @@
 	</section>
 	
 	<footer >
-	<a href="rules.html"> Réglements  </a>
+	<a href="/rules/"> Réglements  </a>
 	</footer>
 	
 	

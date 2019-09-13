@@ -18,7 +18,7 @@ public class CreateteamController {
 
 	
 
-	@RequestMapping(value = "/createteam", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String addCreateTeamForm (Model model) {
         model.addAttribute("activePage", "createteam");
         return "createTeam";
@@ -28,7 +28,7 @@ public class CreateteamController {
 	
 	
 	
-	@RequestMapping(value = "/createteam", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
     public String addCreateTeam(@Valid TeamsHavePlayers teamshaveplayers, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("activePage", "createteam");

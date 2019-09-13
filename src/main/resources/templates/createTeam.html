@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Champions Challenges</title>
-	<link href="css/theme.css" rel="stylesheet">
-	<link href="css/menu.css" rel="stylesheet">
-	<link href="css/createTeam.css" rel="stylesheet">
-	<script type="text/javascript" src="js/anim.js"></script>
+	<link href="/css/theme.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet">
+	<link href="/css/createTeam.css" rel="stylesheet">
+	<script type="text/javascript" src="/js/anim.js"></script>
 </head>
 <body>
 	<header>
-	<img id="logo" src="img/logoBlanc.png" name="logo"/>
+	<img id="logo" src="/img/logoBlanc.png" name="logo"/>
 	<h1> Compose ton Équipe</h1>
 	<div class="container" onclick="cross(this); toggleDisplay();">
 	  	<div class="bar1"></div>
@@ -29,12 +29,11 @@
 	</div>  
 	<ul class="flex">
 			<li><span id="user">${pseudo}</span></li>
-	    	<li><input type="search" placeholder="Rechercher..."></li>
-	      	<li><img id="user" src="img/user.png" name="user"/><a href="compte.html">Mon Compte</a></li>
-	    	<li><img id="createTeam" src="img/compo.png" name="createTeam"/><a href="createTeam.html">Créer mon Équipe</a></li>
-	    	<li><img id="ligue" src="img/ligueIcon.png" name="ligue"/><a href="ligue.html">Ligue</a></li>
-	   		<li><img id="createTeam" src="img/login.png" name="createTeam"/><a href="login.html">Connexion</a></li>
-	   		<li><img id="myTeam" src="img/ball.png" name="myTeam"/><a href="myTeam.html">Mon Equipe</a></li>
+	    	<li><input type="search" placeholder="Rechercher..."></li>	    	
+	      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte/">Mon Compte</a></li>
+	    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league/">Ligue</a></li>
+	   		<li><img id="deconnexion" src="/img/login.png" name="deconnexion"/><a href="/login/">Deconnexion</a></li>
+	   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/team/">Mon Equipe</a></li>
 	 		
 	 </ul>
 	 </li>
@@ -53,7 +52,7 @@
 	
 	
 	<footer >
-	<a href="rules.html"> Réglements  </a>
+	<a href="/rules/"> Réglements  </a>
 	</footer>
 </body>
 

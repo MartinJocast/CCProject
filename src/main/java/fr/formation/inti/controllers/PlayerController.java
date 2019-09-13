@@ -27,13 +27,13 @@ public class PlayerController {
 //	    }
         
 
-	@RequestMapping(value = "/selectplayer", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String SelectPlayerForm(Players player, Model model) {
 		model.addAttribute("activePage", "player");
 		return "myTeam";
 	}
 
-	@RequestMapping(value = "/selectplayer", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
     public String SelectPlayer(@Valid Players player, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("activePage", "player");

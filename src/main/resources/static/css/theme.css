@@ -5,7 +5,7 @@
 body{
 	background: #ebebeb;
 }
-​
+
 @font-face {
   font-family: "Champions-Bold";
   src: url('Champions-Bold.svg#Champions-Bold') format('svg'),
@@ -14,7 +14,7 @@ body{
   font-weight: normal;
   font-style: normal;
 }
-​
+
 @font-face {
   font-family: "Champions";
   src: url('Champions.eot');
@@ -23,9 +23,9 @@ body{
   font-weight: normal;
   font-style: normal;
 }
-​
-​
-​
+
+
+
 header{
 	background: linear-gradient(#192f96,#192f96,#192f96,#192f96,#192f96,#192f96,#192f96,#ebebeb);
 	height: 130px;
@@ -43,10 +43,10 @@ header h1{
 #logo{
 	margin-bottom: 1%;
 }
-​
-​
-​
-​
+
+
+
+
 footer {
     background: url("img/backFooter.png") no-repeat scroll;
     background-size: 100%;
