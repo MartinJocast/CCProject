@@ -15,33 +15,32 @@ import fr.formation.inti.entities.Users;
 import fr.formation.inti.services.UserService;
 
 @Controller
-@RequestMapping("user")
 public class UserController {
 
 	@Autowired
 	UserService userService;
 	
-	@GetMapping(value = "/")
+	@GetMapping(value = "/inscription")
     public String addUserForm(Model model) {
         model.addAttribute("user", new Users());
         return "inscription";
     }
 	
-	@PostMapping(value = "/")
+	@PostMapping(value = "/inscription")
     public String addUser(@Valid Users user, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("user", user);
-            return "inscription";
+            return "redirect:inscription";
         }        
         if (userService.findByEmail(user.getEmail()) != null) {
-        	return "inscription"; 
+        	return "redirect:inscription"; 
         }
         user.setRole("user");
         user.setSecurityRequest("null");
         user.setPassword(hashPassword(user.getPassword()));
         userService.save(user);
         model.addAttribute("user", user);
-        return "home";
+        return "redirect:home";
     }
 
 	private String hashPassword(String password) {

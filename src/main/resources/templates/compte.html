@@ -11,7 +11,7 @@
 </head>
 <body>
 	<header>
-	<a href="/home.html"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
+	<a href="/home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
 	<h1> Mon Compte</h1>
 <nav>
 	<ul id="menu">
@@ -22,13 +22,13 @@
 		<div class="bar3"></div>
 	</div>  
 	<ul class="flex">
-			<li><span id="user">${pseudo}</span></li>
+			<li><span id="user" th:text="${loggedInUser.getPseudo()}" ></span></li>
 	    	<li><input type="search" placeholder="Rechercher..." id="search"></li>
-	      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte/">Mon Compte</a></li>
-	    	<li><img id="createTeam" src="/img/compo.png" name="createTeam"/><a href="/createteam/">Créer mon Équipe</a></li>
-	    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league/">Ligue</a></li>
-	   		<li><img id="deconnexion" src="/img/login.png" name="deconnexion"/><a href="/login/">Deconnexion</a></li>
-	   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/team/">Mon Equipe</a></li>
+	      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte">Mon Compte</a></li>
+	    	<li><img id="createTeam" src="/img/compo.png" name="createTeam"/><a href="/createteam">Créer mon Équipe</a></li>
+	    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league">Ligue</a></li>
+	   		<li><img id="deconnexion" src="/img/login.png" name="deconnexion"/><a href="/login">Deconnexion</a></li>
+	   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/team">Mon Equipe</a></li>
 	 		
 	 </ul>
 	 </li>
@@ -55,21 +55,21 @@
 			
 			<hr>
 
-			<form class="contact100-form validate-form" action ="" method="Post"> <!-- Action à ajouter -->
+			<form class="contact100-form validate-form" th:action="@{/compte}" th:object="${userUpdate}" method="Post">
 			
 				<div class="updateUser" data-validate="Pseudo est obligatoire">
 					<label class="">Pseudo:</span>
-					<input class="" type="text" name="name" value="${pseudo}" required="required">
+					<input class="" type="text" name="name" th:placeholder="${loggedInUser.getPseudo()}" required="required" th:field="*{pseudo}">
 				</div>
 
 				<div class="updateUser" data-validate = "Email est obligatoire : aaa@xyz.com">
 					<label class="">Email:</span>
-					<input class="" type="email" name="email" value="${email}" required="required">
+					<input class="" type="email" name="email" th:value="${loggedInUser.getEmail()}" required="required" >
 				</div>
 
 				<div class="updateUser" data-validate="Mot de passe est obligatoire">
 					<label class="">Mot de Passe:</span>
-					<input class="" type="password" name="password" placeholder="Entrer un mot de passe" required="required">
+					<input class="" type="password" name="password" placeholder="Entrer un mot de passe" required="required" th:field="*{password}">
 				</div>
 				
 				<div class="updateUser" data-validate="Confirmation est obligatoire">
@@ -88,7 +88,7 @@
 	
 	
 	<footer >
-	<a href="/rules/"> Réglements  </a>
+	<a href="/rules"> Réglements  </a>
 	</footer>
 </body>
 

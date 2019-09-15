@@ -4,22 +4,71 @@
 	<meta charset="UTF-8">
 	<title>Champions Challenges</title>
 	<link href="/css/theme.css" rel="stylesheet">
+	<link href="/css/menu.css" rel="stylesheet">
+	<link href="/css/myTeam.css" rel="stylesheet">
 </head>
 <body>
 	<header>
-	<a href="/home/" name="home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
-	<h1> Mon Équipe </h1>
-	<img id="menuIcon" src="/img/menuIcon.png" name="menuIcon"/>
-	</header>
+	<a href="/home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
+	<h1> Mon Équipe</h1>
+	<nav>
+		<ul id="menu">
+		<li>
+		<div class="container" onclick="cross(this)">
+		  	<div class="bar1"></div>
+		 	<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>  
+		<ul class="flex">
+				<li><span id="user" th:text="${loggedInUser.getPseudo()}" ></span></li>
+		    	<li><input type="search" placeholder="Rechercher..." id="search"></li>
+		      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte">Mon Compte</a></li>
+		    	<li><img id="createTeam" src="/img/compo.png" name="createTeam"/><a href="/createTeam">Créer mon Équipe</a></li>
+		    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league">Ligue</a></li>
+		   		<li><img id="deconnexion" src="/img/login.png" name="deconnexion"/><a href="/login">Connexion</a></li>
+		   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/myTeam">Mon Equipe</a></li>
+		 		
+		 	</ul>
+		 	</li>
+			</ul>
+		</nav>  
+</header>
+			
+	<form>	
+		<article>
+			<div class="att">
+				<div class="contain-player" id="att1"><img src="/img/adidas.png"><p> ${codePoste=att} </p></div>
+				<div class="contain-player" id="att2"><img src="/img/adidas.png"><p> ${codePoste=att} </p></div>
+			</div>
 
-	<section >
-		<pre>
+			<div class="mil">
+				<div class="contain-player" id="mil1"><img src="/img/adidas.png"><p> ${codePoste=mil}  </p></div>
+				<div class="contain-player" id="mil2"><img src="/img/adidas.png"><p>${codePoste=mil}  </p></div>
+				<div class="contain-player" id="mil3"><img src="/img/adidas.png"><p>${codePoste=mil}  </p></div>
+				<div class="contain-player" id="mil4"><img src="/img/adidas.png"><p>${codePoste=mil}  </p></div>
+			</div>
+				<div class="def">
+				<div class="contain-player" id="def1"><img src="/img/adidas.png"><p>${codePoste=def}  </p></div>
+				<div class="contain-player" id="def2"><img src="/img/adidas.png"><p>${codePoste=def}  </p></div>
+				<div class="contain-player" id="def3"><img src="/img/adidas.png"><p>${codePoste=def}  </p></div>
+				<div class="contain-player" id="def4"><img src="/img/adidas.png"><p> ${codePoste=def} </p></div>
+			</div>
+
+			<div class="gb">
+				<div class="contain-player" id="gb"><img src="/img/adidas.png"><p>${codePoste=gb}  </p></div>
+			</div>
 		
-		</pre>
-	</section>
+		</article>
 	
 	<footer >
-	<a href="/rules/"> Réglements  </a>
+	<a href="/rules"> Réglements  </a>
 	</footer>
 </body>
+<script type="text/javascript">
+	function cross(x) {
+		x.classList.toggle("change");
+	}
+</script>
+
+
 </html>

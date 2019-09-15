@@ -41,11 +41,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         // The pages does not require login
-        http.authorizeRequests().antMatchers("/", "/user/inscription", "/login", "/rules").permitAll();
+        http.authorizeRequests().antMatchers("/", "/inscription", "/login", "/rules").permitAll();
  
         // /userInfo page requires login as ROLE_USER or ROLE_ADMIN.
         // If no login, it will redirect to /login page.
-        http.authorizeRequests().antMatchers("/home", "/league/*", "/team/*", "/createteam/*").access("hasAnyRole('user', 'admin')");
+       // http.authorizeRequests().antMatchers("/home", "/league", "/team", "/createteam/*").access("hasAnyRole('user', 'admin')");
  
         // For ADMIN only.
 //        http.authorizeRequests().antMatchers("/league/*").access("hasRole('admin')");

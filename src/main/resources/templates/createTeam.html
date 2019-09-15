@@ -6,79 +6,96 @@
 	<link href="/css/theme.css" rel="stylesheet">
 	<link href="/css/menu.css" rel="stylesheet">
 	<link href="/css/createTeam.css" rel="stylesheet">
-	<script type="text/javascript" src="/js/anim.js"></script>
 </head>
 <body>
 	<header>
-	<img id="logo" src="/img/logoBlanc.png" name="logo"/>
-	<h1> Compose ton Équipe</h1>
-	<div class="container" onclick="cross(this); toggleDisplay();">
-	  	<div class="bar1"></div>
-	 	<div class="bar2"></div>
-		<div class="bar3"></div>
-	</div>  
-	</header>
+	<a href="/home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
+	<h1> Composition Équipe</h1>
+	<nav>
+		<ul id="menu">
+		<li>
+		<div class="container" onclick="cross(this)">
+		  	<div class="bar1"></div>
+		 	<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>  
+		<ul class="flex">
+				<li><span id="user" th:text="${loggedInUser.getPseudo()}" ></span></li>
+		    	<li><input type="search" placeholder="Rechercher..." id="search"></li>
+		      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte">Mon Compte</a></li>
+		    	<li><img id="createTeam" src="/img/compo.png" name="createTeam"/><a href="/createTeam">Créer mon Équipe</a></li>
+		    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league">Ligue</a></li>
+		   		<li><img id="deconnexion" src="/img/login.png" name="deconnexion"/><a href="/login">Connexion</a></li>
+		   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/myTeam">Mon Equipe</a></li>
+		 		
+		 	</ul>
+		 	</li>
+			</ul>
+		</nav>  
+</header>
+
+	<iframe id="frameDataPlayer"
+	    title="DataPlayers"
+	    width="1100"
+	    height="500"
+	    src="file:///C:/Users/IN-LL-035/eclipse-workspace2/ccWebProject/WebContent/dataPlayers.html">
+	</iframe>
+			<!-- iFrame importe la page dataPlayer.html.
+			User ne doit pas pouvoir aller sur la page (pas de return).
+			Il faut pouvoir adapter le src. -->
+			
+	<form>	
+		<article>
+			<div class="att">
+				<div class="contain-player" id="att1"><img src="/img/adidas.png"><p id='target'></p></div>
+				<div class="contain-player" id="att2"><img src="/img/adidas.png"><p></p></div>
+			</div>
+
+			<div class="mil">
+				<div class="contain-player" id="mil1"><img src="/img/adidas.png"><p></p></div>
+				<div class="contain-player" id="mil2"><img src="/img/adidas.png"><p></p></div>
+				<div class="contain-player" id="mil3"><img src="/img/adidas.png"><p></p></div>
+				<div class="contain-player" id="mil4"><img src="/img/adidas.png"><p></p></div>
+			</div>
+				<div class="def">
+				<div class="contain-player" id="def1"><img src="/img/adidas.png"><p></p></div>
+				<div class="contain-player" id="def2"><img src="/img/adidas.png"><p></p></div>
+				<div class="contain-player" id="def3"><img src="/img/adidas.png"><p></p></div>
+				<div class="contain-player" id="def4"><img src="/img/adidas.png"><p></p></div>
+			</div>
+
+			<div class="gb">
+				<div class="contain-player" id="gb"><img src="/img/adidas.png"><p></p></div>
+			</div>
+		
+		</article>
 	
-<nav>
-	<ul id="menu">
-	<li>
-	<div class="container" onclick="cross(this); toggleDisplay();">
-	  	<div class="bar1"></div>
-	 	<div class="bar2"></div>
-		<div class="bar3"></div>
-	</div>  
-	<ul class="flex">
-			<li><span id="user">${pseudo}</span></li>
-	    	<li><input type="search" placeholder="Rechercher..."></li>	    	
-	      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte/">Mon Compte</a></li>
-	    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league/">Ligue</a></li>
-	   		<li><img id="deconnexion" src="/img/login.png" name="deconnexion"/><a href="/login/">Deconnexion</a></li>
-	   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/team/">Mon Equipe</a></li>
-	 		
-	 </ul>
-	 </li>
-	</ul>
-</nav>  
-	 
-	<article>
-   
-    
-    
-    
-    
-    
-	</article>
+		<section>
+	
+			<input type="submit" id="valideTeam" value="Défonce-les">
 	
 	
+		</section>
+	</form>
 	
 	<footer >
-	<a href="/rules/"> Réglements  </a>
+	<a href="/rules"> Réglements  </a>
 	</footer>
 </body>
-
 <script type="text/javascript">
-
 	function cross(x) {
 		x.classList.toggle("change");
 	}
-
-
-var animateButton = function(e) {
-
-	e.preventDefault;
-	//reset animation
-	e.target.classList.remove('animate');
-		  
-	e.target.classList.add('animate');
-	setTimeout(function(){
-	e.target.classList.remove('animate');
-	 },700);
-	};
-
-	var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-	for (var i = 0; i < bubblyButtons.length; i++) {
-	 bubblyButtons[i].addEventListener('click', animateButton, false);
-	}
 </script>
+
+<script type="text/javascript">
+window.onload= function(){
+var frame=document.getElementById("frameDataPlayer"); 
+var innerDoc = (frame.contentDocument)  ? frame.contentDocument  : frame.contentWindow.document; 
+alert(innerDoc.getElementById("nameP")); 
+}
+
+
+</script>
+
 </html>

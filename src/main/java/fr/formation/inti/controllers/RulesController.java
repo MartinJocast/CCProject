@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class RulesController {
 
-	@GetMapping(value = "/")
+	@GetMapping(path = {"","/"})
 	public String rules(Model model) {
 		return "rules";
 	}

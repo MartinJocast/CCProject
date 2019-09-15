@@ -24,23 +24,23 @@
 					</div>
 					<ul class="flex">
 
-						<li><span id="user" th:text="${user.pseudo}"></span></li>
+						<li><span id="user" th:text="${loggedInUser.getPseudo()}" ></span></li>
 						<li><input type="search" placeholder="Rechercher..."></li>
 						<li><img id="user" src="/img/user.png" name="user" /><a
-							href="/compte/">Mon Compte</a></li>
+							href="/compte">Mon Compte</a></li>
 							
 						<li><img id="createTeam" src="/img/compo.png"
-							name="createTeam" /><a href="/createteam/"> Créer
+							name="createTeam" /><a href="/createteam"> Créer
 								mon Équipe</a></li>
 								
 						<li><img id="ligue" src="/img/ligueIcon.png" name="ligue" /><a
-							href="/league/">Ligue</a></li>
+							href="/league">Ligue</a></li>
 							
 						<li><img id="connexion" src="/img/login.png"
-							name="connexion" /><a href="/login">Deconnexion</a></li>
+							name="connexion" /><a th:href="@{/logout}">Deconnexion</a></li>
 							
 						<li><img id="myTeam" src="/img/ball.png" name="myTeam" /><a
-							href="/team/">Mon Equipe</a></li>
+							href="/team">Mon Equipe</a></li>
 
 					</ul>
 				</li>
@@ -88,7 +88,7 @@
 
 
 	<footer>
-		<a href="/rules/"> Réglements </a>
+		<a href="/rules"> Réglements </a>
 	</footer>
 </body>
 
