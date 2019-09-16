@@ -20,7 +20,7 @@
 			<div class="bar3"></div>
 		</div>  
 		<ul class="flex">
-				<li><span id="user" th:text="${loggedInUser.getPseudo()}" ></span></li>
+				<li><span id="user" th:text="${loggedInUser}" ></span></li>
 		    	<li><input type="search" placeholder="Rechercher..." id="search"></li>
 		      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte">Mon Compte</a></li>
 		    	<li><img id="createTeam" src="/img/compo.png" name="createTeam"/><a href="/createTeam">Créer mon Équipe</a></li>
@@ -34,16 +34,13 @@
 		</nav>  
 </header>
 
-	<iframe id="frameDataPlayer"
-	    title="DataPlayers"
-	    width="1100"
-	    height="500"
-	    src="file:///C:/Users/IN-LL-035/eclipse-workspace2/ccWebProject/WebContent/dataPlayers.html">
-	</iframe>
+	<section>
+	<th:block th:include="fragments/dataPlayers.html" :: body id="dataBox"></th:block>
 			<!-- iFrame importe la page dataPlayer.html.
 			User ne doit pas pouvoir aller sur la page (pas de return).
 			Il faut pouvoir adapter le src. -->
-			
+	</section>
+
 	<form>	
 		<article>
 			<div class="att">
@@ -90,8 +87,8 @@
 
 <script type="text/javascript">
 window.onload= function(){
-var frame=document.getElementById("frameDataPlayer"); 
-var innerDoc = (frame.contentDocument)  ? frame.contentDocument  : frame.contentWindow.document; 
+var dataBox = document.getElementById("dataBox"); 
+var innerDoc = (dataBox.contentDocument)  ? dataBox.contentDocument  : dataBox.contentWindow.document; 
 alert(innerDoc.getElementById("nameP")); 
 }
 

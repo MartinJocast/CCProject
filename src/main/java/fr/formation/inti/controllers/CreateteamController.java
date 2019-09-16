@@ -29,9 +29,9 @@ public class CreateteamController {
 	
 	@GetMapping(path = {"","/"})
     public String addCreateTeamForm (Model model, Principal principal) {
-		User loggedUser = (User) ((Authentication) principal).getPrincipal();
-		Users loggedInUser = userService.findByEmail(loggedUser.getUsername());
-		model.addAttribute("loggedInUser", loggedInUser);
+//		User loggedUser = (User) ((Authentication) principal).getPrincipal();
+//		Users loggedInUser = userService.findByEmail(loggedUser.getUsername());
+		model.addAttribute("loggedInUser", "lol");
         return "createTeam";
     }
 
