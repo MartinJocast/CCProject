@@ -1,5 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Champions Challenges</title>
@@ -10,108 +11,113 @@
 	<link href="/css/ball.css" rel="stylesheet">
 	<script type="text/javascript" src="/js/anim.js"></script>
 </head>
+
 <body>
-<header>
-	<a href="/home"><img id="logo" src="/img/logoBlanc.png" name="logo"/></a>
-	<h1> Ligue </h1>
-	<nav>
-		<ul id="menu">
-		<li>
-		<div class="container" onclick="cross(this)">
-		  	<div class="bar1"></div>
-		 	<div class="bar2"></div>
-			<div class="bar3"></div>
-		</div>  
-		<ul class="flex">
-			<li><span id="user" th:text="${loggedInUser.getPseudo()}" ></span></li>
-	    	<li><input type="search" placeholder="Rechercher..." id="search"></li>
-	      	<li><img id="user" src="/img/user.png" name="user"/><a href="/compte">Mon Compte</a></li>
-	    	<li><img id="createTeam" src="/img/compo.png" name="createTeam"/><a href="/createteam">Créer mon Équipe</a></li>
-	    	<li><img id="ligue" src="/img/ligueIcon.png" name="ligue"/><a href="/league">Ligue</a></li>
-	   		<li><img id="deconnexion" src="/img/login.png" name="deconnexion"/><a href="/login">Deconnexion</a></li>
-	   		<li><img id="myTeam" src="/img/ball.png" name="myTeam"/><a href="/team">Mon Equipe</a></li>
-		 		
-		 	</ul>
-		 	</li>
+	<header>
+		<a href="/home"><img id="logo" src="/img/logoBlanc.png" name="logo" /></a>
+		<h1> Ligue </h1>
+		<nav>
+			<ul id="menu">
+				<li>
+					<div class="container" onclick="cross(this)">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+					</div>
+					<ul class="flex">
+						<li><span id="user" th:text="${loggedInUser.getPseudo()}"></span></li>
+						<li><input type="search" placeholder="Rechercher..." id="search"></li>
+						<li><img id="user" src="/img/user.png" name="user" /><a href="/compte">Mon Compte</a></li>
+						<li><img id="createTeam" src="/img/compo.png" name="createTeam" /><a href="/createteam">Créer
+								mon Équipe</a></li>
+						<li><img id="ligue" src="/img/ligueIcon.png" name="ligue" /><a href="/league">Ligue</a></li>
+						<li><img id="deconnexion" src="/img/login.png" name="deconnexion" /><a
+								href="/login">Deconnexion</a></li>
+						<li><img id="myTeam" src="/img/ball.png" name="myTeam" /><a href="/team">Mon Equipe</a></li>
+
+					</ul>
+				</li>
 			</ul>
-		</nav>  
-</header>
-	 <!-- *********************************PARTIE A MODIFIER*********************** -->
-	<article>				
-				
+		</nav>
+	</header>
+	<!-- *********************************PARTIE A MODIFIER*********************** -->
+	<article>
+
 		<div class="container-contact100">
 			<div class="wrap-contact100">
 				<div class="contact100-form-title" style="background-image: url(img/bg-03.jpg);">
 					<span class="contact100-form-title-1">
-					Créer ta Ligue !
+						Créer ta Ligue !
 					</span>
 				</div>
 
-		<form th:action="@{/league}" th:object="${league}" class="contact100-form validate-form" method="post">
-				
-				<div class="wrap-input100 validate-input" data-validate="Nom de la Ligue obligatoire">
-					<span class="label-input100">Nom :</span>
-					<input class="input100" type="text" th:field="*{name}" placeholder="Nom de la Ligue" required="required">
-				</div>
-				
-				<h3> Invite tes joueurs !</h3>
-				<h4>inscrit leurs adresses mails :</h4>
+				<form th:action="@{/league}" th:object="${league}" class="contact100-form validate-form" method="post">
+
+					<div class="wrap-input100 validate-input" data-validate="Nom de la Ligue obligatoire">
+						<span class="label-input100">Nom :</span>
+						<input class="input100" type="text" th:field="*{name}" placeholder="Nom de la Ligue"
+							required="required">
+					</div>
+
+					<h3> Invite tes joueurs !</h3>
+					<h4>inscrit leurs adresses mails :</h4>
 					<table>
-					 <tr>
-						<td>
-						<section>
-							<div class="a">
-							</div>
-							<div class="c"><input class="inviteLigue" type="text" value="${admin}"></div>
-							<div class="b">
-							</div>
-						</section>
-						</td>
-						
-						<td>
-						<section>
-							<div class="a">
-							</div>
-							<div class="c"><input class="inviteLigue"type="email" placeholder="joueur 2"></div>
-							<div class="b">
-							</div>
-						</section>
-						</td>
-					 </tr>
-					 
-					 <tr>
-						<td>
-						<section>
-							<div class="a">
-							</div>
-							<div class="c"><input class="inviteLigue"type="email" placeholder="joueur 3"></div>
-							<div class="b">
-							</div>
-						</section>
-						</td>
-						
-						<td>
-						<section>
-							<div class="a">
-							</div>
-							<div class="c"><input class="inviteLigue"type="email" placeholder="joueur 4"></div>
-							<div class="b">
-							</div>
-						</section>
-						</td>
-					 </tr>
-				</table>
-					
-					<input class="submit" type="submit" id="submit"  value="Commencer">
-			</form>
+						<tr>
+							<td>
+								<section>
+									<div class="a">
+									</div>
+									<div class="c"><input class="inviteLigue" type="text"
+											th:value="${loggedInUser.getEmail()}" th:field="*{leaguesHaveUserses[0].users.email}"></div>
+									<div class="b">
+									</div>
+								</section>
+							</td>
+
+							<td>
+								<section>
+									<div class="a">
+									</div>
+									<div class="c"><input class="inviteLigue" th:field="*{leaguesHaveUserses[1].users.email}" type="email" placeholder="joueur 2"></div>
+									<div class="b">
+									</div>
+								</section>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<section>
+									<div class="a">
+									</div>
+									<div class="c"><input class="inviteLigue" th:field="*{leaguesHaveUserses[2].users.email}" type="email" placeholder="joueur 3"></div>
+									<div class="b">
+									</div>
+								</section>
+							</td>
+
+							<td>
+								<section>
+									<div class="a">
+									</div>
+									<div class="c"><input class="inviteLigue" th:field="*{leaguesHaveUserses[3].users.email}" type="email" placeholder="joueur 4"></div>
+									<div class="b">
+									</div>
+								</section>
+							</td>
+						</tr>
+					</table>
+
+					<input class="submit" type="submit" id="submit" value="Commencer">
+				</form>
+			</div>
 		</div>
-	</div>
 	</article>
-   
-	
-	
-	<footer >
-	<a href="/rules"> Réglements  </a>
+
+
+
+	<footer>
+		<a href="/rules"> Réglements </a>
 	</footer>
 </body>
 
@@ -121,4 +127,5 @@
 		x.classList.toggle("change");
 	}
 </script>
+
 </html>

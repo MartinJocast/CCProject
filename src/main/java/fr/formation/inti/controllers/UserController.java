@@ -40,7 +40,7 @@ public class UserController {
         user.setPassword(hashPassword(user.getPassword()));
         userService.save(user);
         model.addAttribute("user", user);
-        return "redirect:home";
+        return "redirect:login";
     }
 
 	private String hashPassword(String password) {

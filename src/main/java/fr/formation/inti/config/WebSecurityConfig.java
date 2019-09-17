@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import fr.formation.inti.services.UserDetailsServiceImpl;
  
@@ -45,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  
         // /userInfo page requires login as ROLE_USER or ROLE_ADMIN.
         // If no login, it will redirect to /login page.
-       // http.authorizeRequests().antMatchers("/home", "/league", "/team", "/createteam/*").access("hasAnyRole('user', 'admin')");
+       // http.authorizeRequests().antMatchers("/home", "/league", "/team", "/createteam/*").authenticated();
  
         // For ADMIN only.
 //        http.authorizeRequests().antMatchers("/league/*").access("hasRole('admin')");
@@ -59,14 +60,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // Config for Login Form
         http.authorizeRequests().and().formLogin()//
                 // Submit URL of login page.
-                .loginProcessingUrl("/j_spring_security_check") // Submit URL
-                .loginPage("/login")//
+        		.loginProcessingUrl("/j_spring_security_check") // Submit URL
+                .loginPage("/login")//            
                 .defaultSuccessUrl("/home")//
                 .failureUrl("/login?error=true")//
                 .usernameParameter("email")//
                 .passwordParameter("password")
                 // Config for Logout Page
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
  
         // Config Remember Me.
         http.authorizeRequests().and() //
